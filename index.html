@@ -9,8 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="css/style.css">
-  <!-- Runs before paint so a saved theme does not flash the wrong colors. -->
-  <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 </head>
 <body>
   <a class="skip-link" href="#featured">Skip to projects</a>
@@ -23,7 +21,6 @@
         <a href="#work">Archive</a>
         <a href="#about">Experience</a>
         <a href="#contact">Contact</a>
-        <button class="theme" id="theme" type="button" aria-pressed="false" aria-label="Switch color theme">theme: light</button>
       </nav>
     </header>
 
@@ -32,8 +29,8 @@
         <div class="hero-copy">
           <p class="eyebrow">Computer Engineer &amp; Designer · Koronadal City, Philippines</p>
           <h1 id="hero-h">Edgar, Jr. B. Villas</h1>
-          <p class="hero-statement">From bare-metal C and edge neural networks to the PCB, 3D enclosure, and interface.</p>
-          <p class="lead">I build hardware that sees, measures, and moves: 30 ms CNN classifiers on MAX78000 silicon, Bluetooth-streaming ESP32 instruments, single-camera 3D insect reconstruction, and custom UI/UX systems.</p>
+          <p class="hero-statement">A Computer Engineer and multidisciplinary designer bridging physical hardware and human interfaces.</p>
+          <p class="lead">I graduated Cum Laude in Computer Engineering from MSU-IIT and am now based in Koronadal City. Since 2020, I have worked at the intersection of low-level engineering and visual craft: writing firmware and computer vision code while designing the circuit schematics, 3D-printed enclosures, and user interfaces that make technical systems complete and intuitive to use.</p>
           <div class="chips" role="group" aria-label="Jump to projects by hardware or stack">
             <button class="chip" type="button" data-jump="#flagship-01">MAX78000</button>
             <button class="chip" type="button" data-jump="#flagship-02">ESP32</button>

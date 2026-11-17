@@ -10,32 +10,7 @@
   --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --font-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0c1411;
-    --surface: #131e19;
-    --fg: #e3ebe6;
-    --muted: #98a89e;
-    --line: #25352d;
-    --border-strong: #62756b;
-    --accent: #4fd1a1;
-    --led: #f2b829;
-    color-scheme: dark;
-  }
-}
-
-:root[data-theme="dark"] {
-  --bg: #0c1411;
-  --surface: #131e19;
-  --fg: #e3ebe6;
-  --muted: #98a89e;
-  --line: #25352d;
-  --border-strong: #62756b;
-  --accent: #4fd1a1;
-  --led: #f2b829;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 * {

@@ -1,29 +1,9 @@
 (function () {
   var root = document.documentElement;
-  var themeBtn = document.getElementById("theme");
-  var darkQuery = matchMedia("(prefers-color-scheme: dark)");
-
-  function currentTheme() {
-    return root.getAttribute("data-theme") || (darkQuery.matches ? "dark" : "light");
-  }
-
-  function onThemeChange() {
-    var cur = currentTheme();
-    themeBtn.textContent = "theme: " + cur;
-    themeBtn.setAttribute("aria-pressed", String(cur === "dark"));
-    readColors();
-    draw();
-  }
-
-  themeBtn.addEventListener("click", function () {
-    var next = currentTheme() === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    try {
-      localStorage.setItem("theme", next);
-    } catch (e) {}
-    onThemeChange();
-  });
-  darkQuery.addEventListener("change", onThemeChange);
+  root.removeAttribute("data-theme");
+  try {
+    localStorage.removeItem("theme");
+  } catch (e) {}
 
   var N = 8;
   var cv = document.getElementById("led");
@@ -206,8 +186,9 @@
   });
 
   fit();
+  readColors();
   reset();
-  onThemeChange();
+  draw();
   if (!reduced) requestAnimationFrame(tick);
 
   var filterBtns = Array.prototype.slice.call(document.querySelectorAll("[data-filter]"));
