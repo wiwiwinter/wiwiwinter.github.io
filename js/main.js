@@ -27,9 +27,9 @@
   function readColors() {
     var s = getComputedStyle(root);
     colors = {
-      fg: s.getPropertyValue("--fg").trim(),
-      accent: s.getPropertyValue("--accent").trim(),
-      led: s.getPropertyValue("--led").trim()
+      fg: s.getPropertyValue("--fg").trim() || "#101916",
+      accent: s.getPropertyValue("--accent").trim() || "#0b6b52",
+      led: s.getPropertyValue("--led").trim() || "#9e6b00"
     };
   }
 
