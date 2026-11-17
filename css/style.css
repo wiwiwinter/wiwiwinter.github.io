@@ -98,6 +98,11 @@ a:hover {
   padding: 4px 0;
 }
 
+.brand-icon {
+  flex: 0 0 auto;
+  margin-right: 10px;
+}
+
 .brand span {
   color: var(--muted);
   font-weight: 400;
