@@ -20,7 +20,7 @@
       <a class="brand" href="#top">Edgar, Jr. B. Villas<span>@wiwiwinter</span></a>
       <nav aria-label="Primary">
         <a href="#featured">Flagship</a>
-        <a href="#work">Projects</a>
+        <a href="#work">Archive</a>
         <a href="#about">Experience</a>
         <a href="#contact">Contact</a>
         <button class="theme" id="theme" type="button" aria-pressed="false" aria-label="Switch color theme">theme: light</button>
@@ -29,20 +29,22 @@
 
     <main class="wrap">
       <section class="hero" aria-labelledby="hero-h">
-        <div>
+        <div class="hero-copy">
           <p class="eyebrow">Computer Engineer &amp; Designer · Koronadal City, Philippines</p>
           <h1 id="hero-h">Edgar, Jr. B. Villas</h1>
-          <p class="lead">I write firmware and vision pipelines for microcontrollers, sensors, and cameras, and design the interfaces and enclosures around them.</p>
-          <ul class="chips" aria-label="Hardware I have shipped code on">
-            <li>MAX78000</li>
-            <li>ESP32</li>
-            <li>AVR</li>
-            <li>AT89C52</li>
-            <li>Arduino</li>
-          </ul>
+          <p class="hero-statement">From bare-metal C and edge neural networks to the PCB, 3D enclosure, and interface.</p>
+          <p class="lead">I build hardware that sees, measures, and moves: 30 ms CNN classifiers on MAX78000 silicon, Bluetooth-streaming ESP32 instruments, single-camera 3D insect reconstruction, and custom UI/UX systems.</p>
+          <div class="chips" role="group" aria-label="Jump to projects by hardware or stack">
+            <button class="chip" type="button" data-jump="#flagship-01">MAX78000</button>
+            <button class="chip" type="button" data-jump="#flagship-02">ESP32</button>
+            <button class="chip" type="button" data-jump="#flagship-03">AVR</button>
+            <button class="chip" type="button" data-search="AT89C52">AT89C52</button>
+            <button class="chip" type="button" data-search="Arduino">Arduino</button>
+            <button class="chip" type="button" data-search="OpenCV">OpenCV</button>
+          </div>
           <div class="cta">
-            <a class="btn primary" href="#featured">Explore featured builds</a>
-            <a class="btn" href="#work">Browse all projects</a>
+            <a class="btn primary" href="#featured">Explore flagship builds</a>
+            <a class="btn" href="#work">Browse project archive</a>
           </div>
           <p class="socials">
             <a href="https://github.com/wiwiwinter?tab=repositories" target="_blank" rel="noopener">GitHub</a>
@@ -53,7 +55,7 @@
 
         <div class="matrix">
           <div class="board">
-            <canvas id="led" width="320" height="320" tabindex="0" role="application" aria-label="Playable 8 by 8 LED matrix game based on the 8051 Tower of Power project. Tap or press Space to stack the moving bar."></canvas>
+            <canvas id="led" width="360" height="360" tabindex="0" role="application" aria-label="Playable 8 by 8 LED matrix game based on the 8051 Tower of Power project. Tap or press Space to stack the moving bar."></canvas>
           </div>
           <div class="matrix-bar">
             <p class="matrix-status" id="matrix-status" role="status" aria-live="polite">Height 3/8 · Space or tap</p>
@@ -68,11 +70,13 @@
       </section>
 
       <section id="featured" aria-labelledby="featured-h">
-        <p class="label">Flagship engineering builds</p>
-        <h2 id="featured-h">Deep hardware, firmware, and edge vision.</h2>
-        <p class="sub">Three end-to-end builds spanning hardware-accelerated CNN inference on a microcontroller, custom sensor hardware with Bluetooth web telemetry, and interrupt-driven bare-metal robotics.</p>
+        <div class="section-head">
+          <p class="label"><span class="idx">01 /</span>Flagship engineering builds</p>
+          <h2 id="featured-h">Deep hardware, firmware, and edge vision.</h2>
+          <p class="sub">Three end-to-end builds spanning hardware-accelerated CNN inference on a microcontroller, custom sensor hardware with Bluetooth web telemetry, and interrupt-driven bare-metal robotics.</p>
+        </div>
 
-        <article class="flagship-lead">
+        <article class="flagship-lead" id="flagship-01" tabindex="-1">
           <div>
             <p class="label"><span class="idx">01</span>Edge AI · Analog Devices MAX78000</p>
             <h3>MAX78000 Edge AI Visual Classifier</h3>
@@ -96,7 +100,7 @@
         </article>
 
         <div class="flagship-pair">
-          <article class="flagship-sub">
+          <article class="flagship-sub" id="flagship-02" tabindex="-1">
             <div>
               <p class="label"><span class="idx">02</span>Embedded Instrument · ESP32 + 3D Enclosure</p>
               <h3>Handheld ESP32 Lux Meter &amp; Telemetry Logger</h3>
@@ -106,7 +110,7 @@
                 <li>TSL2591 I2C</li>
                 <li>SSD1306 OLED</li>
                 <li>Bluetooth Telemetry</li>
-                <li>3D CAD (.stl / .3mf)</li>
+                <li>3D CAD (STL / 3MF)</li>
               </ul>
             </div>
             <div>
@@ -114,7 +118,7 @@
             </div>
           </article>
 
-          <article class="flagship-sub">
+          <article class="flagship-sub" id="flagship-03" tabindex="-1">
             <div>
               <p class="label"><span class="idx">03</span>Bare-Metal Robotics · AVR C</p>
               <h3>Autonomous Wall-Following Robot Firmware</h3>
@@ -135,9 +139,11 @@
       </section>
 
       <section id="work" aria-labelledby="work-h">
-        <p class="label">Complete project index</p>
-        <h2 id="work-h">All engineering &amp; research projects.</h2>
-        <p class="sub">Open-source hardware, firmware, computer vision, and web builds. Filter by engineering domain or search by microcontroller, language, or sensor.</p>
+        <div class="section-head">
+          <p class="label"><span class="idx">02 /</span>Project archive</p>
+          <h2 id="work-h">More engineering &amp; research builds.</h2>
+          <p class="sub">Seven additional builds across computer vision, 8051 assembly, autonomous robotics, IoT telemetry, and web tools. Filter by domain or search any microcontroller, language, or sensor.</p>
+        </div>
 
         <div class="toolbar" role="region" aria-label="Project filters">
           <div class="filters" role="group" aria-label="Filter projects by category">
@@ -147,63 +153,14 @@
             <button class="filter-btn" type="button" data-filter="software" aria-pressed="false">Web &amp; UI Tools</button>
           </div>
           <div class="search-wrap">
-            <input class="search-input" id="project-search" type="search" placeholder="Search stack (e.g. 8051, ESP32, Python)" aria-label="Filter projects by keyword or stack">
+            <input class="search-input" id="project-search" type="search" placeholder="Search stack (e.g. 8051, OpenCV, Arduino)" aria-label="Filter projects by keyword or stack">
           </div>
         </div>
-        <p class="label" id="project-count" aria-live="polite">Showing 10 of 10 projects</p>
+        <p class="label" id="project-count" aria-live="polite">Showing 7 of 7 projects</p>
 
         <ul class="projects" id="project-list">
-          <li class="project" data-category="embedded">
-            <div class="cat">ESP32 · Instrumentation</div>
-            <div>
-              <h3>Handheld ESP32 Lux Meter &amp; Web Logger</h3>
-              <p>Five-stage ESP32 firmware and Web Serial/Bluetooth logger for a handheld TSL2591 + SSD1306 OLED light meter with HOLD/MODE hardware buttons, auto-gain calibration, 3D enclosure STL/3MF files, and live CSV graphing.</p>
-              <ul class="tags">
-                <li class="hot">C++</li>
-                <li>ESP32</li>
-                <li>TSL2591</li>
-                <li>SSD1306 OLED</li>
-                <li>Web Bluetooth / Serial</li>
-                <li>3D Enclosure</li>
-              </ul>
-            </div>
-            <a class="repo" href="https://github.com/wiwiwinter/lux_meter" target="_blank" rel="noopener">GitHub source</a>
-          </li>
-
           <li class="project" data-category="vision">
-            <div class="cat">Edge AI · MAX78000</div>
-            <div>
-              <h3>MAX78000 Edge AI Visual Classifier</h3>
-              <p>Real-time image classification on the Analog Devices MAX78000 Feather board using its integrated hardware CNN accelerator, DMA camera streaming (128x128 RGB888), and softmax probability readout.</p>
-              <ul class="tags">
-                <li class="hot">C</li>
-                <li>MAX78000</li>
-                <li>7-layer CNN</li>
-                <li>DMA Camera</li>
-                <li>MaximSDK</li>
-              </ul>
-            </div>
-            <a class="repo" href="https://github.com/wiwiwinter/Burger_vs_Pizza---MAX78000" target="_blank" rel="noopener">GitHub source</a>
-          </li>
-
-          <li class="project" data-category="embedded">
-            <div class="cat">AVR · Robotics</div>
-            <div>
-              <h3>Autonomous Wall-Following Robot</h3>
-              <p>AVR C firmware for an autonomous wall-following robot using timer-based timekeeping, hardware PWM motor and servo control, interrupt-driven ultrasonic echo timing, and a finite state machine.</p>
-              <ul class="tags">
-                <li class="hot">C</li>
-                <li>AVR</li>
-                <li>PWM &amp; Timers</li>
-                <li>Interrupts</li>
-                <li>Pathfinding</li>
-              </ul>
-            </div>
-            <a class="repo" href="https://github.com/wiwiwinter/COE185--LAB_PROJECT--WALL_FOLLOWING_ROBOT" target="_blank" rel="noopener">GitHub source</a>
-          </li>
-
-          <li class="project" data-category="vision">
-            <div class="cat">Computer vision · Thesis</div>
+            <div class="cat"><span class="idx">04</span>Computer vision · Thesis</div>
             <div>
               <h3>SCANSECT: Single-Camera 3D Insect Reconstruction</h3>
               <p>Cost-effective single-camera system for 3D reconstruction and morphological analysis of insects at MSU-IIT. Built the Python and OpenCV image-processing pipeline, photogrammetry workflow, and hardware control interface.</p>
@@ -219,7 +176,7 @@
           </li>
 
           <li class="project" data-category="embedded">
-            <div class="cat">Embedded · 8051 MCU</div>
+            <div class="cat"><span class="idx">05</span>Embedded · 8051 MCU</div>
             <div>
               <h3>Tower of Power: 8051 LED Matrix Game</h3>
               <p>Timing-based arcade game on an AT89C52 microcontroller programmed entirely in 8051 Assembly, driving dual 8x8 LED matrices with single-button bar alignment, health bars, and progressive speed scaling.</p>
@@ -234,7 +191,7 @@
           </li>
 
           <li class="project" data-category="vision">
-            <div class="cat">Deep learning · Vision</div>
+            <div class="cat"><span class="idx">06</span>Deep learning · Vision</div>
             <div>
               <h3>musikAI: Emotion-Driven Music Recommender</h3>
               <p>Facial expression music recommendation system that detects listener emotion in real time through a camera feed using a VGGNet model and OpenCV, then queries the Spotify API for mood-matched playlists.</p>
@@ -249,7 +206,7 @@
           </li>
 
           <li class="project" data-category="software">
-            <div class="cat">Geospatial · Web App</div>
+            <div class="cat"><span class="idx">07</span>Geospatial · Web App</div>
             <div>
               <h3>LOGOS-PH: Supply-Chain Route Intelligence</h3>
               <p>Satellite-powered logistics route intelligence platform delivering real-time Resilience Scores for Philippine supply-chain routes, pairing a custom Figma UI design system with an interactive web dashboard.</p>
@@ -264,7 +221,7 @@
           </li>
 
           <li class="project" data-category="embedded">
-            <div class="cat">Robotics · Arduino</div>
+            <div class="cat"><span class="idx">08</span>Robotics · Arduino</div>
             <div>
               <h3>Autonomous Firefighting Robot</h3>
               <p>Autonomous two-wheel firefighting robot built on the LAFVIN 2WD chassis and Arduino Uno R3 that detects flames via multi-directional sensors, navigates toward the heat source, and actuates a water pump.</p>
@@ -279,7 +236,7 @@
           </li>
 
           <li class="project" data-category="embedded">
-            <div class="cat">IoT · Energy</div>
+            <div class="cat"><span class="idx">09</span>IoT · Energy</div>
             <div>
               <h3>Adaptive IoT Street Lighting System</h3>
               <p>Smart street lighting system integrating motion sensors, Arduino, and ThingSpeak for real-time telemetry, motion-triggered dimming, and dynamic color adjustment to reduce power consumption.</p>
@@ -294,7 +251,7 @@
           </li>
 
           <li class="project" data-category="software">
-            <div class="cat">Web App · UI/UX</div>
+            <div class="cat"><span class="idx">10</span>Web App · UI/UX</div>
             <div>
               <h3>Retro RPG Strategy &amp; Progression Tracker</h3>
               <p>Offline-capable web walkthrough and progression tracker for Breath of Fire (1993) with instant search across towns, bosses, and gear, collapsible checklists, and local-storage persistence.</p>
@@ -309,15 +266,17 @@
         </ul>
 
         <div class="empty-state" id="project-empty" role="status" hidden>
-          <p>No projects match that filter or search. Reset to see everything.</p>
+          <p>No projects match that filter or search. Reset to see all 7 archive builds.</p>
           <button class="btn" id="project-reset" type="button">Reset filters</button>
         </div>
       </section>
 
       <section class="split" id="about" aria-labelledby="exp-h">
         <div>
-          <p class="label">Experience &amp; background</p>
-          <h2 id="exp-h">Engineering and design practice.</h2>
+          <div class="section-head">
+            <p class="label"><span class="idx">03 /</span>Experience &amp; background</p>
+            <h2 id="exp-h">Engineering and design practice.</h2>
+          </div>
           <ul class="timeline">
             <li>
               <div class="role-head">
@@ -405,7 +364,7 @@
     </main>
 
     <footer class="contact" id="contact" aria-labelledby="contact-h">
-      <p class="label flush">Contact</p>
+      <p class="label flush"><span class="idx">04 /</span>Contact</p>
       <h2 id="contact-h">Open for embedded, computer vision, and UI/UX engineering work.</h2>
       <div class="contact-meta">
         <a href="mailto:edgarjr.villas@gmail.com">edgarjr.villas@gmail.com</a>

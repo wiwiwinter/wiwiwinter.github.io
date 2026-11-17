@@ -33,7 +33,7 @@
   var resetBtn = document.getElementById("matrix-reset");
   var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
   var dpr = Math.min(window.devicePixelRatio || 1, 2);
-  var size = 320;
+  var size = 360;
   var colors = {};
   var best = 3;
   var rows, r, len, pos, dir, acc, last, flash, flashUntil;
@@ -67,7 +67,7 @@
   }
 
   function fit() {
-    size = cv.clientWidth || 320;
+    size = cv.clientWidth || 360;
     cv.width = cv.height = Math.round(size * dpr);
     ctx.setTransform(cv.width / size, 0, 0, cv.width / size, 0, 0);
   }
@@ -236,7 +236,7 @@
       item.hidden = !visible;
       if (visible) shown += 1;
     });
-    countEl.textContent = "Showing " + shown + " of " + projects.length + " projects";
+    countEl.textContent = "Showing " + shown + " of " + projects.length + " archive projects";
     emptyState.hidden = shown > 0;
   }
 
@@ -259,5 +259,29 @@
     setCategory("all");
     searchInput.focus();
   });
+
+  // Hero hardware chips either jump to a flagship card or filter the archive.
+  Array.prototype.slice.call(document.querySelectorAll(".chip")).forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      var targetSel = chip.getAttribute("data-jump");
+      var query = chip.getAttribute("data-search");
+      if (targetSel) {
+        var el = document.querySelector(targetSel);
+        if (!el) return;
+        el.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "center" });
+        el.classList.add("flash-target");
+        el.focus({ preventScroll: true });
+        setTimeout(function () {
+          el.classList.remove("flash-target");
+        }, 1200);
+      } else if (query) {
+        searchInput.value = query;
+        setCategory("all");
+        var workEl = document.getElementById("work");
+        if (workEl) workEl.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+      }
+    });
+  });
+
   applyFilters();
 })();
