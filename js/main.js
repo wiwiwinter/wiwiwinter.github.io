@@ -5,6 +5,18 @@
     localStorage.removeItem("theme");
   } catch (e) {}
 
+  if (location.hash === "#top" && history.replaceState) {
+    history.replaceState(null, "", location.pathname + location.search);
+  }
+  var brandLink = document.querySelector(".brand");
+  if (brandLink) {
+    brandLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+      if (history.replaceState) history.replaceState(null, "", location.pathname + location.search);
+    });
+  }
+
   var N = 8;
   var cv = document.getElementById("led");
   var ctx = cv.getContext("2d");
